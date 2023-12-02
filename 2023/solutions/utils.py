@@ -20,7 +20,7 @@ def load_example_input(day: int, part: int):
     
         return infile.read().splitlines()
     
-def test_code(func, example_dict):
+def test_code(func, example_dict, debug = False):
     """
     Tests the solver function against the known examples.
     
@@ -32,6 +32,10 @@ def test_code(func, example_dict):
     failed = False
 
     for sample_index, (sample_input, sample_output) in enumerate(example_dict.items()):
+
+        if debug:
+            print(f'sample_input: {sample_input}')
+            print(f'sample_output: {sample_output}')
         
         if func(sample_input) == sample_output:
             
